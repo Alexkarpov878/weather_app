@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=New%20York,%20NY&key=SecretKey
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 14 May 2025 11:39:04 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - New York, NY
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
+      Content-Length:
+      - '1899'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=34
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"New York\",\n
+        \              \"short_name\" : \"New York\",\n               \"types\" :
+        \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"New York\",\n               \"short_name\" : \"NY\",\n               \"types\"
+        : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            }\n         ],\n
+        \        \"formatted_address\" : \"New York, NY, USA\",\n         \"geometry\"
+        : \n         {\n            \"bounds\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 40.917705,\n                  \"lng\"
+        : -73.700169\n               },\n               \"southwest\" : \n               {\n
+        \                 \"lat\" : 40.476578,\n                  \"lng\" : -74.258843\n
+        \              }\n            },\n            \"location\" : \n            {\n
+        \              \"lat\" : 40.7127753,\n               \"lng\" : -74.0059728\n
+        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 40.917705,\n                  \"lng\" : -73.700169\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 40.476578,\n                  \"lng\" : -74.258843\n               }\n            }\n
+        \        },\n         \"place_id\" : \"ChIJOwg_06VPwokRYv534QaPC8g\",\n         \"types\"
+        : \n         [\n            \"locality\",\n            \"political\"\n         ]\n
+        \     }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Wed, 14 May 2025 11:39:03 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_MAP_API_KEY>&lat=40.7127753&lon=-74.0059728&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 14 May 2025 11:39:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '539'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=40.71&lon=-74.01&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-74.006,"lat":40.7128},"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"base":"stations","main":{"temp":14.53,"feels_like":14.47,"temp_min":13.48,"temp_max":16.23,"pressure":1019,"humidity":93,"sea_level":1019,"grnd_level":1018},"visibility":3405,"wind":{"speed":3.58,"deg":59,"gust":4.02},"rain":{"1h":3.58},"clouds":{"all":100},"dt":1747222357,"sys":{"type":2,"id":2037026,"country":"US","sunrise":1747215586,"sunset":1747267507},"timezone":-14400,"id":5128581,"name":"New
+        York","cod":200}'
+  recorded_at: Wed, 14 May 2025 11:39:04 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20California&key=<GOOGLE_GEOCODING_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 14 May 2025 16:56:01 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - San Jose, CA
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
+      Content-Length:
+      - '4151'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=18
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"Infinite Loop
+        1\",\n               \"short_name\" : \"Infinite Loop 1\",\n               \"types\"
+        : \n               [\n                  \"premise\"\n               ]\n            },\n
+        \           {\n               \"long_name\" : \"1\",\n               \"short_name\"
+        : \"1\",\n               \"types\" : \n               [\n                  \"street_number\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Infinite Loop\",\n               \"short_name\" : \"Infinite Loop\",\n
+        \              \"types\" : \n               [\n                  \"route\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Cupertino\",\n               \"short_name\" : \"Cupertino\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Santa Clara County\",\n               \"short_name\" : \"Santa Clara County\",\n
+        \              \"types\" : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"California\",\n               \"short_name\"
+        : \"CA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"95014\",\n               \"short_name\" :
+        \"95014\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"2083\",\n               \"short_name\" : \"2083\",\n               \"types\"
+        : \n               [\n                  \"postal_code_suffix\"\n               ]\n
+        \           }\n         ],\n         \"formatted_address\" : \"Infinite Loop
+        1, 1 Infinite Loop, Cupertino, CA 95014, USA\",\n         \"geometry\" : \n
+        \        {\n            \"bounds\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 37.3321786,\n                  \"lng\"
+        : -122.0297996\n               },\n               \"southwest\" : \n               {\n
+        \                 \"lat\" : 37.3312158,\n                  \"lng\" : -122.0305776\n
+        \              }\n            },\n            \"location\" : \n            {\n
+        \              \"lat\" : 37.3318598,\n               \"lng\" : -122.0302485\n
+        \           },\n            \"location_type\" : \"ROOFTOP\",\n            \"viewport\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 37.3330203302915,\n                  \"lng\" : -122.0289492197085\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 37.3303223697085,\n                  \"lng\" : -122.0316471802915\n               }\n
+        \           }\n         },\n         \"navigation_points\" : \n         [\n
+        \           {\n               \"location\" : \n               {\n                  \"latitude\"
+        : 37.33116529999999,\n                  \"longitude\" : -122.0307429\n               },\n
+        \              \"restricted_travel_modes\" : \n               [\n                  \"WALK\"\n
+        \              ]\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 37.3314215,\n                  \"longitude\"
+        : -122.030747\n               }\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 37.3317064,\n                  \"longitude\"
+        : -122.0307154\n               }\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 37.3319324,\n                  \"longitude\"
+        : -122.0307347\n               }\n            }\n         ],\n         \"place_id\"
+        : \"ChIJAf9D3La1j4ARuwKZtGjgMXw\",\n         \"types\" : \n         [\n            \"premise\",\n
+        \           \"street_address\"\n         ]\n      }\n   ],\n   \"status\"
+        : \"OK\"\n}"
+  recorded_at: Wed, 14 May 2025 16:56:01 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_MAP_API_KEY>&lat=37.3318598&lon=-122.0302485&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 14 May 2025 16:56:02 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '516'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=37.33&lon=-122.03&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.0302,"lat":37.3319},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":15.42,"feels_like":16.8,"temp_min":13.53,"temp_max":17.05,"pressure":1018,"humidity":63,"sea_level":1018,"grnd_level":993},"visibility":10000,"wind":{"speed":0.89,"deg":115,"gust":2.68},"clouds":{"all":0},"dt":1747241513,"sys":{"type":2,"id":2001717,"country":"US","sunrise":1747227596,"sunset":1747278549},"timezone":-25200,"id":5341145,"name":"Cupertino","cod":200}'
+  recorded_at: Wed, 14 May 2025 16:56:02 GMT
+recorded_with: VCR 6.3.1

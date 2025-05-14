@@ -44,4 +44,47 @@ http_interactions:
         sky","icon":"01n"}],"base":"stations","main":{"temp":12.12,"feels_like":11.5,"temp_min":10.96,"temp_max":13.84,"pressure":1017,"humidity":81,"sea_level":1017,"grnd_level":1013},"visibility":10000,"wind":{"speed":10.28,"deg":315,"gust":12.52},"clouds":{"all":0},"dt":1747197635,"sys":{"type":2,"id":2017837,"country":"US","sunrise":1747141280,"sunset":1747192251},"timezone":-25200,"id":5391959,"name":"San
         Francisco","cod":200}'
   recorded_at: Wed, 14 May 2025 04:47:29 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=SecretKey&lat=37.7749&lon=-122.4194&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 14 May 2025 16:26:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '108'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=37.77&lon=-122.42&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401
+        for more info."}'
+  recorded_at: Wed, 14 May 2025 16:26:12 GMT
 recorded_with: VCR 6.3.1

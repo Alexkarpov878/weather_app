@@ -26,7 +26,7 @@ module Clients
           }
         )
 
-        return result unless result.success?
+        return Failure.new(error: result.error) if result.failure?
 
         build_forecast(result.data)
       end

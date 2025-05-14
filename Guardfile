@@ -53,8 +53,12 @@ guard :rspec, cmd: "bundle exec rspec" do
     [
       rspec.spec.call("routing/#{m[1]}_routing"),
       rspec.spec.call("controllers/#{m[1]}_controller"),
-      rspec.spec.call("acceptance/#{m[1]}")
+      rspec.spec.call("requests/#{m[1]}")
     ]
+  end
+
+  watch(%r{^app/controllers/api/v(\d+)/(.+)_controller\.rb$}) do |m|
+    "spec/requests/api/v#{m[1]}/#{m[2]}_spec.rb"
   end
 
   # Rails config changes

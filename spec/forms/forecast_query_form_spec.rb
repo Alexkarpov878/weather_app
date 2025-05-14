@@ -2,16 +2,16 @@ require 'spec_helper'
 
 describe ForecastQueryForm do
   describe "validations" do
-    subject { ForecastQueryForm.new(address: nil) }
+    subject(:form) { described_class.new(address: nil) }
 
     it "requires an address" do
-      expect(subject).not_to be_valid
-      expect(subject.errors[:address]).to include("can't be blank")
+      expect(form).not_to be_valid
+      expect(form.errors[:address]).to include("can't be blank")
     end
   end
 
   describe "#address=" do
-    subject(:form) { ForecastQueryForm }
+    subject(:form) { described_class }
 
     it "formats the address correctly" do
       expect(form.new(address: "  123 Main St  ").address).to eq("123 Main St")

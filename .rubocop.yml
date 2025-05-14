@@ -1,19 +1,26 @@
-# Omakase Ruby styling for Rails
 inherit_gem:
   rubocop-rails-omakase: rubocop.yml
-
-AllCops:
-  NewCops: enable
-  Exclude:
-    - 'bin/*'
-    - 'db/**/*'
-    - 'tmp/**/*'
-    - 'vendor/**/*'
 
 plugins:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4.3
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'config/environments/*.rb'
+    - 'config/initializers/**/*'
+    - 'config/puma.rb'
+    - 'config/application.rb'
+    - 'config/boot.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
 
 Rails:
   Enabled: true
@@ -23,7 +30,6 @@ RSpec:
 
 RSpec/IncludeExamples:
   Enabled: true
-
 
 RSpec/MultipleMemoizedHelpers:
   Max: 15
@@ -36,3 +42,28 @@ RSpec/ExampleLength:
 
 Rails/I18nLocaleTexts:
   Enabled: false
+
+Layout/IndentationStyle:
+  EnforcedStyle: spaces
+
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: keyword
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal
+
+Layout/BlockAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: start_of_block

@@ -1,27 +1,31 @@
 require 'rails_helper'
 
-describe Clients::Geocoders::CensusClient do
+describe Clients::Geocoders::GoogleClient do
   subject(:client) { described_class.new }
 
+  before do
+    allow(Rails.application.credentials).to receive(:geocoder_api_keys).and_return({ google_api_key: 'SecretKey' })
+  end
+
   describe '#geocode' do
-    context 'with a valid address', vcr: { cassette_name: 'census_geocode_valid_address' } do
+    context 'with a valid address', vcr: { cassette_name: 'google_geocode_valid_address' } do
       subject(:result) { client.geocode(address: address) }
 
-      let(:address) { '1207 Network Centre Dr, Effingham, IL 62401, USA' }
+      let(:address) { '1 Infinite Loop, Cupertino, CA 95014' }
       let(:location) { result.data }
 
       it_behaves_like 'a geocoding client returning a location successfully'
 
-      it 'sets the correct location attributes' do
-        expect(location.zip_code).to eq('62401')
-        expect(location.city).to eq('EFFINGHAM')
-        expect(location.state_code).to eq('IL')
+      it 'returns a Location object for a valid address' do
+        expect(location.zip_code).to eq('95014')
+        expect(location.city).to eq('Cupertino')
+        expect(location.state_code).to eq('CA')
         expect(location.country).to eq('US')
-        expect(location.full_address).to include('1207 NETWORK CENTRE DR')
+        expect(location.full_address).to include('Infinite Loop 1, 1 Infinite Loop, Cupertino, CA 95014, USA')
       end
     end
 
-    context 'with an invalid address', vcr: { cassette_name: 'census_geocode_invalid_address' } do
+    context 'with an invalid address', vcr: { cassette_name: 'google_geocode_invalid_address' } do
       let(:address) { '123 Fake Street, Nowhere, XX 00000' }
 
       it 'returns a failure result with not found error' do
@@ -40,7 +44,7 @@ describe Clients::Geocoders::CensusClient do
 
     context 'when a network error occurs' do
       let(:address) { '123 Sesame Street' }
-      let(:expected_url) { Clients::Geocoders::CensusClient::BASE_URL }
+      let(:expected_url) { Clients::Geocoders::GoogleClient::BASE_URL }
 
       before do
         faraday_connection = client.http_client

@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1207%20Network%20Centre%20Dr,%20Effingham,%20IL%2062401,%20USA&benchmark=Public_AR_Current&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 14 May 2025 02:07:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '677'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - private, no-store
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1;mode=block
+      Vary:
+      - Origin
+      Set-Cookie:
+      - TS0193e6a1=01283c52a4b764d9e300fbc55c5ee4517303b040a3cdd4bc388eaa20cee1a94bbd7c5e46b648d9327454d818e3cbe9ffcf398d18cf;
+        Path=/; Domain=.geocoding.geo.census.gov; Secure; HttpOnly;
+    body:
+      encoding: UTF-8
+      string: '{"result":{"input":{"address":{"address":"1207 Network Centre Dr, Effingham,
+        IL 62401, USA"},"benchmark":{"isDefault":true,"benchmarkDescription":"Public
+        Address Ranges - Current Benchmark","id":"4","benchmarkName":"Public_AR_Current"}},"addressMatches":[{"tigerLine":{"side":"L","tigerLineId":"94771314"},"coordinates":{"x":-88.524643170304,"y":39.145786699792},"addressComponents":{"zip":"62401","streetName":"NETWORK
+        CENTRE","preType":"","city":"EFFINGHAM","preDirection":"","suffixDirection":"","fromAddress":"1201","state":"IL","suffixType":"DR","toAddress":"1299","suffixQualifier":"","preQualifier":""},"matchedAddress":"1207
+        NETWORK CENTRE DR, EFFINGHAM, IL, 62401"}]}}'
+  recorded_at: Wed, 14 May 2025 02:07:38 GMT
+recorded_with: VCR 6.3.1

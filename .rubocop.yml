@@ -2,10 +2,6 @@
 inherit_gem:
   rubocop-rails-omakase: rubocop.yml
 
-require:
-  - rubocop-rspec
-  - rubocop-performance
-
 AllCops:
   NewCops: enable
   Exclude:
@@ -27,3 +23,13 @@ RSpec:
 
 RSpec/IncludeExamples:
   Enabled: true
+
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 15
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 10

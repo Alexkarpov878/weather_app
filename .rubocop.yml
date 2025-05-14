@@ -33,3 +33,6 @@ RSpec/MultipleExpectations:
 
 RSpec/ExampleLength:
   Max: 10
+
+Rails/I18nLocaleTexts:
+  Enabled: false

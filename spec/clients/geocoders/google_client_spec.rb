@@ -8,10 +8,13 @@ describe Clients::Geocoders::GoogleClient do
   end
 
   describe '#geocode' do
-    context 'with a valid address', vcr: { cassette_name: 'google_geocode_valid_address' } do
-      subject(:result) { client.geocode(address: address) }
+    subject(:result) { client.geocode(address: address) }
 
+    let(:address) { '1 Infinite Loop, Cupertino, CA 95014' }
+
+    context 'with a valid address', vcr: { cassette_name: 'google_geocode_valid_address' } do
       let(:address) { '1 Infinite Loop, Cupertino, CA 95014' }
+
       let(:location) { result.data }
 
       it_behaves_like 'a geocoding client returning a location successfully'
@@ -54,6 +57,19 @@ describe Clients::Geocoders::GoogleClient do
       end
 
       it_behaves_like 'returns a Failure with NetworkError and logs'
+    end
+
+    context 'when the API key is invalid', vcr: { cassette_name: 'google_geocode_invalid_api_key' } do
+      before do
+        allow(Rails.application.credentials).to receive(:geocoder_api_keys).and_return({ google_api_key: 'Fake' })
+      end
+
+      it "returns a failure result with ExternalApiError" do
+        expect(result).to be_a(Service::Failure)
+        expect(result.error).to be_a(Errors::ExternalApiError)
+        # debugger
+        expect(result.error.message).to include('The provided API key is invalid.')
+      end
     end
   end
 end

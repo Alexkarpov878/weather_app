@@ -12,6 +12,7 @@ module Clients
       def geocode(address:)
         return Service::Failure.new(error: Errors::InvalidInputError.new("Address cannot be blank")) if address.blank?
 
+        # TODO: Extract caching logic and cache the full API response instead of just the location
         if (cached_data = cache_store.read(cache_key(address)))
           return Service::Success.new(data: Location.new(cached_data))
         end
@@ -36,6 +37,24 @@ module Clients
       end
 
       private
+
+      def process_http_response(response, url)
+        if response.success?
+          return fail_with_external_api_error(response, url, status: 401, message: response&.body&.dig("error_message")) if response&.body&.dig("status") == "REQUEST_DENIED"
+          Success.new(data: response.body)
+        else
+          fail_with_external_api_error(response, url)
+        end
+      end
+
+      def process_http_response(response, url)
+        if response.success?
+          return fail_with_external_api_error(response, url, status: 401, message: response.body["error_message"]) if response.body.is_a?(Hash) && response.body["status"] == "REQUEST_DENIED"
+          Success.new(data: response.body)
+        else
+          fail_with_external_api_error(response, url)
+        end
+      end
 
       def cache_key(address)
         "geocode/google/#{Digest::SHA1.hexdigest(address.downcase.strip)}"

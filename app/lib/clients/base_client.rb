@@ -14,7 +14,7 @@ module Clients
 
     def initialize(api_key: nil, http_client: default_http_client, service_name: self.class.name.demodulize)
       @api_key = api_key
-      @http_client = http_client
+      @http_client = http_client || default_http_client
       @service_name = service_name
     end
 

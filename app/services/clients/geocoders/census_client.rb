@@ -4,8 +4,7 @@ module Clients
       BASE_URL = "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress".freeze
 
       def initialize(**kwargs)
-        super(**kwargs)
-        @service_name = "CensusGeocoder"
+        super(service_name: "CensusGeocoder", **kwargs)
       end
 
       def geocode(address:)
@@ -13,6 +12,7 @@ module Clients
 
         cache_key = "geocode/census/#{Digest::SHA1.hexdigest(address.downcase.strip)}"
 
+        # TODO: Extract caching logic and cache the full API response instead of just the location
         if (cached_data = cache_store.read(cache_key))
           return Success.new(data: Location.new(cached_data))
         end

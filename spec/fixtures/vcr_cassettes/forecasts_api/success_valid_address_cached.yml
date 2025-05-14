@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 14 May 2025 03:29:16 GMT
+      - Wed, 14 May 2025 11:37:12 GMT
       Pragma:
       - no-cache
       Expires:
@@ -51,7 +51,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=75
+      - gfet4t7; dur=37
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
@@ -110,7 +110,50 @@ http_interactions:
         : \"ChIJAf9D3La1j4ARuwKZtGjgMXw\",\n         \"types\" : \n         [\n            \"premise\",\n
         \           \"street_address\"\n         ]\n      }\n   ],\n   \"status\"
         : \"OK\"\n}"
-  recorded_at: Wed, 14 May 2025 03:29:16 GMT
+  recorded_at: Wed, 14 May 2025 11:37:12 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_MAP_API_KEY>&lat=37.3318598&lon=-122.0302485&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 14 May 2025 11:37:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '516'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=37.33&lon=-122.03&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.0302,"lat":37.3319},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":8.63,"feels_like":8.24,"temp_min":7.39,"temp_max":10.15,"pressure":1017,"humidity":83,"sea_level":1017,"grnd_level":992},"visibility":10000,"wind":{"speed":1.37,"deg":221,"gust":1.41},"clouds":{"all":8},"dt":1747222631,"sys":{"type":2,"id":2001717,"country":"US","sunrise":1747227596,"sunset":1747278549},"timezone":-25200,"id":5341145,"name":"Cupertino","cod":200}'
+  recorded_at: Wed, 14 May 2025 11:37:13 GMT
 - request:
     method: get
     uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=SecretKey
@@ -134,7 +177,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 14 May 2025 04:00:02 GMT
+      - Wed, 14 May 2025 11:37:14 GMT
       Pragma:
       - no-cache
       Expires:
@@ -162,7 +205,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=62
+      - gfet4t7; dur=33
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
@@ -221,10 +264,10 @@ http_interactions:
         : \"ChIJAf9D3La1j4ARuwKZtGjgMXw\",\n         \"types\" : \n         [\n            \"premise\",\n
         \           \"street_address\"\n         ]\n      }\n   ],\n   \"status\"
         : \"OK\"\n}"
-  recorded_at: Wed, 14 May 2025 04:00:02 GMT
+  recorded_at: Wed, 14 May 2025 11:37:14 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=SecretKey
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_MAP_API_KEY>&lat=37.3318598&lon=-122.0302485&units=metric
     body:
       encoding: US-ASCII
       string: ''
@@ -242,228 +285,27 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
+      Server:
+      - openresty
       Date:
-      - Wed, 14 May 2025 16:26:10 GMT
-      Pragma:
-      - no-cache
-      Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Vary:
-      - Accept-Language
+      - Wed, 14 May 2025 11:37:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '516'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=37.33&lon=-122.03&units=metric"
       Access-Control-Allow-Origin:
       - "*"
-      Content-Security-Policy-Report-Only:
-      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
-      Cross-Origin-Opener-Policy-Report-Only:
-      - same-origin; report-to=msaifdggmnwc:228:0
-      Report-To:
-      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
-      Server:
-      - mafe
-      Content-Length:
-      - '111'
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Server-Timing:
-      - gfet4t7; dur=9
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
     body:
       encoding: UTF-8
-      string: |-
-        {
-           "error_message" : "The provided API key is invalid. ",
-           "results" : [],
-           "status" : "REQUEST_DENIED"
-        }
-  recorded_at: Wed, 14 May 2025 16:26:09 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=SecretKey
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      User-Agent:
-      - Faraday v2.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 14 May 2025 16:26:10 GMT
-      Pragma:
-      - no-cache
-      Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Content-Security-Policy-Report-Only:
-      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
-      Cross-Origin-Opener-Policy-Report-Only:
-      - same-origin; report-to=msaifdggmnwc:228:0
-      Report-To:
-      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
-      Server:
-      - mafe
-      Content-Length:
-      - '111'
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Server-Timing:
-      - gfet4t7; dur=10
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-           "error_message" : "The provided API key is invalid. ",
-           "results" : [],
-           "status" : "REQUEST_DENIED"
-        }
-  recorded_at: Wed, 14 May 2025 16:26:10 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=SecretKey
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      User-Agent:
-      - Faraday v2.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 14 May 2025 16:26:11 GMT
-      Pragma:
-      - no-cache
-      Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Content-Security-Policy-Report-Only:
-      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
-      Cross-Origin-Opener-Policy-Report-Only:
-      - same-origin; report-to=msaifdggmnwc:228:0
-      Report-To:
-      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
-      Server:
-      - mafe
-      Content-Length:
-      - '111'
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Server-Timing:
-      - gfet4t7; dur=10
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-           "error_message" : "The provided API key is invalid. ",
-           "results" : [],
-           "status" : "REQUEST_DENIED"
-        }
-  recorded_at: Wed, 14 May 2025 16:26:11 GMT
-- request:
-    method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=SecretKey
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      User-Agent:
-      - Faraday v2.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 14 May 2025 16:26:11 GMT
-      Pragma:
-      - no-cache
-      Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      Cache-Control:
-      - no-cache, must-revalidate
-      Vary:
-      - Accept-Language
-      Access-Control-Allow-Origin:
-      - "*"
-      Content-Security-Policy-Report-Only:
-      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
-      Cross-Origin-Opener-Policy-Report-Only:
-      - same-origin; report-to=msaifdggmnwc:228:0
-      Report-To:
-      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
-      Server:
-      - mafe
-      Content-Length:
-      - '111'
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Server-Timing:
-      - gfet4t7; dur=12
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-    body:
-      encoding: UTF-8
-      string: |-
-        {
-           "error_message" : "The provided API key is invalid. ",
-           "results" : [],
-           "status" : "REQUEST_DENIED"
-        }
-  recorded_at: Wed, 14 May 2025 16:26:11 GMT
+      string: '{"coord":{"lon":-122.0302,"lat":37.3319},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":8.63,"feels_like":8.24,"temp_min":7.39,"temp_max":10.15,"pressure":1017,"humidity":83,"sea_level":1017,"grnd_level":992},"visibility":10000,"wind":{"speed":1.37,"deg":221,"gust":1.41},"clouds":{"all":8},"dt":1747222631,"sys":{"type":2,"id":2001717,"country":"US","sunrise":1747227596,"sunset":1747278549},"timezone":-25200,"id":5341145,"name":"Cupertino","cod":200}'
+  recorded_at: Wed, 14 May 2025 11:37:15 GMT
 recorded_with: VCR 6.3.1

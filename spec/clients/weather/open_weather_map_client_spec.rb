@@ -30,7 +30,7 @@ describe Clients::Weather::OpenWeatherMapClient do
       it 'returns a failure result with invalid input error' do
         result = client.forecast(location: location)
         expect(result).to be_a(Service::Failure)
-        expect(result.error.message).to eq("wrong latitude")
+        expect(result.error.message).to eq("[OpenWeatherMapClient] (Status: 400) wrong latitude")
         expect(result.error.status_code).to eq(400)
       end
     end
@@ -57,7 +57,7 @@ describe Clients::Weather::OpenWeatherMapClient do
         result = client.forecast(location: location)
         expect(result).to be_a(Service::Failure)
         expect(result.error).to be_a(Errors::ExternalApiError)
-        expect(result.error.message).to eq('Invalid API key. Please see https://openweathermap.org/faq#error401 for more info.')
+        expect(result.error.message).to eq("[OpenWeatherMapClient] (Status: 401) Invalid API key. Please see https://openweathermap.org/faq#error401 for more info.")
       end
     end
   end

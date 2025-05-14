@@ -1,0 +1,13 @@
+<main data-controller="forecast">
+  <h1>Welcome to the Weather App!</h1>
+  <article>
+    <form data-forecast-target="form" data-action="submit->forecast#handleSubmit" class="form">
+      <label for="address">Enter US address:</label>
+      <input type="text" id="address" name="address" placeholder="e.g., 1 Infinite Loop, Cupertino, California">
+      <button type="submit">Get Forecast</button>
+    </form>
+  </article>
+  <div data-forecast-target="loading" id="loading" aria-live="polite" style="display: none;">Loading...</div>
+  <div data-forecast-target="error" id="error" aria-live="assertive" style="display: none;" class="error"></div>
+  <div data-forecast-target="result" id="result" style="display: none;" class="forecast-result"></div>
+</main>

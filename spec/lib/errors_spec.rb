@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe Errors do
   describe Errors::ApplicationError do
     it 'inherits from StandardError' do
-      expect(Errors::ApplicationError.superclass).to eq(StandardError)
+      expect(described_class.superclass).to eq(StandardError)
     end
 
     it 'sets a custom message' do
-      error = Errors::ApplicationError.new('Something went wrong')
+      error = described_class.new('Something went wrong')
       expect(error.message).to eq('Something went wrong')
     end
   end
 
   describe Errors::ExternalApiError do
-    let(:error) { Errors::ExternalApiError.new('API failed', service_name: 'WeatherAPI', status_code: 503, response_body: { error: 'down' }) }
+    let(:error) { described_class.new('API failed', service_name: 'WeatherAPI', status_code: 503, response_body: { error: 'down' }) }
 
     it 'sets service_name, status_code, and response_body' do
       expect(error.service_name).to eq('WeatherAPI')
@@ -27,7 +27,7 @@ RSpec.describe Errors do
   end
 
   describe Errors::InvalidInputError do
-    let(:error) { Errors::InvalidInputError.new('Bad input', field: 'email', reason: 'invalid format') }
+    let(:error) { described_class.new('Bad input', field: 'email', reason: 'invalid format') }
 
     it 'sets field and reason' do
       expect(error.field).to eq('email')
@@ -41,7 +41,7 @@ RSpec.describe Errors do
 
   describe Errors::NetworkError do
     let(:original_error) { StandardError.new('Connection timed out') }
-    let(:error) { Errors::NetworkError.new('Network issue', service_name: 'API', original_error: original_error) }
+    let(:error) { described_class.new('Network issue', service_name: 'API', original_error: original_error) }
 
     it 'sets service_name and original_error' do
       expect(error.service_name).to eq('API')
@@ -59,7 +59,7 @@ RSpec.describe Errors do
   end
 
   describe Errors::NotFoundError do
-    let(:error) { Errors::NotFoundError.new('Address not found', service_name: 'DB', status_code: 404) }
+    let(:error) { described_class.new('Address not found', service_name: 'DB', status_code: 404) }
 
     it 'sets service_name and status_code, with nil response_body' do
       expect(error.service_name).to eq('DB')
@@ -73,7 +73,7 @@ RSpec.describe Errors do
   end
 
   describe Errors::ValidationError do
-    let(:error) { Errors::ValidationError.new('Invalid data', field: 'name', reason: 'too short') }
+    let(:error) { described_class.new('Invalid data', field: 'name', reason: 'too short') }
 
     it 'sets field and reason' do
       expect(error.field).to eq('name')

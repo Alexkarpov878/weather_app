@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=123%20Fake%20Street,%20Nowhere,%20XX%2000000&benchmark=Public_AR_Current&format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 14 May 2025 02:07:39 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '244'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - DENY
+      Cache-Control:
+      - private, no-store
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1;mode=block
+      Vary:
+      - Origin
+      Set-Cookie:
+      - TS0193e6a1=01283c52a4cc59e6b8ff270b0d51a898f2bff9da559a7366b5a5188719a8ae4b6d6f7815727a7d7b4354ce6aca1720b44b8e690235;
+        Path=/; Domain=.geocoding.geo.census.gov; Secure; HttpOnly;
+    body:
+      encoding: UTF-8
+      string: '{"result":{"input":{"address":{"address":"123 Fake Street, Nowhere,
+        XX 00000"},"benchmark":{"isDefault":true,"benchmarkDescription":"Public Address
+        Ranges - Current Benchmark","id":"4","benchmarkName":"Public_AR_Current"}},"addressMatches":[]}}'
+  recorded_at: Wed, 14 May 2025 02:07:39 GMT
+recorded_with: VCR 6.3.1

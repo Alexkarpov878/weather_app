@@ -10,7 +10,7 @@ module Clients
 
     DEFAULT_OPEN_TIMEOUT = 2
     DEFAULT_READ_TIMEOUT = 5
-    DEFAULT_MAX_RETRIES = 3
+
     attr_reader :api_key, :http_client, :service_name
 
     def initialize(api_key: nil, http_client: default_http_client, service_name: self.class.name.demodulize)
@@ -70,7 +70,7 @@ module Clients
         Success.new(data: response.body)
       else
         log_error(
-          StandardError.new("API Request Failed"),
+          StandardError.new("API Request Failed with status #{response.status}"),
           stage: "HTTP Response Processing",
           url: url,
           status: response&.status,

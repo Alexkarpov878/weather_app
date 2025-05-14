@@ -35,7 +35,7 @@ describe Clients::Geocoders::GoogleClient do
         result = client.geocode(address: address)
         expect(result).to be_a(Service::Failure)
         expect(result.error).to be_a(Errors::NotFoundError)
-        expect(result.error.message).to eq('No match found for address: 123 Fake Street, Nowhere, XX 00000')
+        expect(result.error.message).to eq('[External Service] (Status: 404) No match found for address')
       end
     end
 
@@ -67,8 +67,7 @@ describe Clients::Geocoders::GoogleClient do
       it "returns a failure result with ExternalApiError" do
         expect(result).to be_a(Service::Failure)
         expect(result.error).to be_a(Errors::ExternalApiError)
-        # debugger
-        expect(result.error.message).to include('The provided API key is invalid.')
+        expect(result.error.message).to include('Request denied by API')
       end
     end
   end

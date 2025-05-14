@@ -32,7 +32,7 @@ describe Clients::BaseClient do
       end
     end
 
-    context 'when response is unsuccessful' do
+    context 'when response is bad request' do
       let(:success) { false }
       let(:status) { 400 }
       let(:response_body) { { message: 'API request failed with status 400', status: '400' }.as_json }

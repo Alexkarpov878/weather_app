@@ -77,6 +77,7 @@ module Clients
     end
 
     def process_http_response(response, url)
+      log_response(response, url) # Log all responses before processing
       if response.success?
         Success.new(data: response.body)
       else
@@ -84,15 +85,34 @@ module Clients
       end
     end
 
+    def log_response(response, url)
+      status = response.status
+      # Truncate body to avoid logging sensitive/large data
+      body_preview = response.body.to_s.truncate(200, omission: "... (truncated)")
+      log_message = "API Response: #{url}, Status: #{status}, Body Preview: #{body_preview}"
+
+      if response.success?
+        Rails.logger.debug(log_message)
+      else
+        Rails.logger.info(log_message)
+      end
+    end
+
     def fail_with_external_api_error(response, url, status: 400, message: nil)
       message = message || response&.body&.dig("message")
-      error = Errors::ExternalApiError.new(
-        "API request failed with status #{response.status}",
-        service_name: @service_name,
-        status_code: response&.status,
-        response_body: response&.body,
-        message:
-      )
+
+      if status == 404
+        error = Errors::NotFoundError.new(
+          message || "Resource not found"
+        )
+      else
+        error = Errors::ExternalApiError.new(
+          message,
+          service_name: @service_name,
+          status_code: response&.status,
+          response_body: response&.body,
+        )
+      end
 
       log_error(
         error,
@@ -109,7 +129,7 @@ module Clients
     def handle_network_error(error, url)
       log_error(error, stage: "Network Communication", url: url)
       Failure.new(error: Errors::NetworkError.new(
-        "Network communication error: #{error.message}",
+        "Network communication error",
         service_name: @service_name,
         original_error: error
       ))

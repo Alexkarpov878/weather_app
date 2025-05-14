@@ -28,7 +28,7 @@ describe Clients::Geocoders::CensusClient do
         result = client.geocode(address: address)
         expect(result).to be_a(Service::Failure)
         expect(result.error).to be_a(Errors::NotFoundError)
-        expect(result.error.message).to eq('No match found for address: 123 Fake Street, Nowhere, XX 00000')
+        expect(result.error.message).to eq('[External Service] (Status: 404) No match found for address: 123 Fake Street, Nowhere, XX 00000')
       end
     end
 

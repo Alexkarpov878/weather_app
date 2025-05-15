@@ -2,14 +2,12 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Infinite%20Loop,%20Cupertino,%20CA%2095014&key=Fake
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=123%20Fake%20Street,%20Nowhere,%20XX%2000000&key=<GOOGLE_GEOCODING_API_KEY>
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/json
-      Content-Type:
       - application/json
       User-Agent:
       - Faraday v2.13.1
@@ -23,7 +21,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 14 May 2025 07:11:47 GMT
+      - Thu, 15 May 2025 18:38:33 GMT
       Pragma:
       - no-cache
       Expires:
@@ -43,22 +41,21 @@ http_interactions:
       Server:
       - mafe
       Content-Length:
-      - '111'
+      - '51'
       X-Xss-Protection:
       - '0'
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=10
+      - gfet4t7; dur=63
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
       string: |-
         {
-           "error_message" : "The provided API key is invalid. ",
            "results" : [],
-           "status" : "REQUEST_DENIED"
+           "status" : "ZERO_RESULTS"
         }
-  recorded_at: Wed, 14 May 2025 07:11:46 GMT
+  recorded_at: Thu, 15 May 2025 18:38:33 GMT
 recorded_with: VCR 6.3.1

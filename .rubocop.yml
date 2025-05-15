@@ -40,6 +40,9 @@ RSpec/MultipleExpectations:
 RSpec/ExampleLength:
   Max: 10
 
+RSpec/NestedGroups:
+  Max: 5
+
 Rails/I18nLocaleTexts:
   Enabled: false
 

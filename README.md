@@ -243,3 +243,8 @@ Here's a summary of the key pull requests that built this application:
     - **Link:** [https://github.com/Alexkarpov878/weather_app/pull/5](https://github.com/Alexkarpov878/weather_app/pull/5)
     - **Summary:** This PR delivered the user interface. A `PagesController` was added to serve the home page, which includes an address input form. A Stimulus JavaScript controller (`forecast_controller.js`) was implemented to handle form submissions asynchronously, call the backend API, and dynamically update the page with the forecast, loading indicators, or error messages. Basic styling was applied using SimpleCSS 2.
     - **Rationale:** This PR makes the application usable from a web browser. Stimulus provides a lightweight and efficient way to add interactivity to the frontend without the overhead of a larger JavaScript framework, fitting the "modest JavaScript framework" philosophy of Hotwire. Asynchronous API calls enhance the user experience by avoiding full page reloads.
+
+6.  **PR#6: Improve API Error Handling and Client Robustness**
+    - **Link:** [https://github.com/Alexkarpov878/weather_app/pull/5](https://github.com/Alexkarpov878/weather_app/pull/7)
+    - **Summary:** This PR enhances API error handling and refines geocoding/weather clients for better maintainability and reliability. Key changes include unified error handling in BaseController, modularized request handling in BaseClient, improved error mapping and caching in GoogleClient, refined input validation in OpenWeatherMapClient, updated error classes, and testing/config updates.
+    - **Rationale:**  These improvements reduce code duplication, enhance extensibility, and improve test reliability, aligning with Rails best practices and clean code principles.
